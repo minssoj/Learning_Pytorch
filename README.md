@@ -15,4 +15,4 @@
 
 ## Data
 - day3 - 06.tsDataModel.py
- - weather_data.csv (https://data.kma.go.kr/stcs/grnd/grndTaList.do?pgmNo=70)
+-- weather_data.csv (https://data.kma.go.kr/stcs/grnd/grndTaList.do?pgmNo=70)
