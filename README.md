@@ -14,7 +14,7 @@
 
 ## Setting
 * anaconda 설치 (https://www.anaconda.com/products/individual)
-* pycharm 설치 (https://www.jetbrains.com/ko-kr/pycharm/promo/?gclid=EAIaIQobChMI4ceY1Lfw6wIVF6mWCh2Lfg-EEAAYASAAEgJwBfD_BwE)
+* pycharm 설치 (https://www.jetbrains.com/ko-kr/pycharm)
 * 가상환경 생성
     * Anaconda Prompt
     ```
