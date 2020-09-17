@@ -6,10 +6,10 @@
 ## Schedule
 |          내용         |   날짜     |   비고   |
 | -------------------------------- |:---------------:|--------------------------|
-|01. Tensor, Linear regression model | 2020. 09. 14 |
+|01. Linear regression model | 2020. 09. 14 | Tensor |
 |02. Logistic model, Multilayer perceptron | 2020. 09. 15 ||
 |03. Fully-Connected (FC) layer| 2020. 09. 16 | Softmax, Classification model |
-|04. Convolutional Neural Network (CNN) | 2020. 09. 17 | Weight initialization |
+|04. Convolutional Neural Network (CNN) <br/> Recurrent Neural Network (RNN) | 2020. 09. 17 | Weight initialization <br/> LSTM, GRU |
 |05. | 2020. 09. 18 ||
 
 ## Setting
