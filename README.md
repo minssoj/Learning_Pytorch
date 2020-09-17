@@ -1,7 +1,7 @@
 # Learning_Pytorch
  Minso Jeong, MOOC PyTorch를 활용한 딥러닝 기법
  
-![pytorch_main_img](./pytorch_main_img.png)
+![pytorch_main](./pytorch_main.png)
 
 ## Schedule
 |          내용         |   날짜     |   비고   |
