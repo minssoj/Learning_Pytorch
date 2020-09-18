@@ -10,7 +10,7 @@
 |02. Logistic model, Multilayer perceptron | 2020. 09. 15 ||
 |03. Fully-Connected (FC) layer| 2020. 09. 16 | Softmax, Classification model |
 |04. Convolutional Neural Network (CNN) <br/>   Recurrent Neural Network (RNN) | 2020. 09. 17 | Weight initialization <br/> LSTM, GRU |
-|05. | 2020. 09. 18 ||
+|05. Recurrent Neural Network (RNN) <br/> AutoEncoder (AE) <br/> Generative Adversarial Network (GAN) | 2020. 09. 18 | seq2seq |
 
 ## Setting
 * anaconda 설치 (https://www.anaconda.com/products/individual)
@@ -31,7 +31,8 @@
         * scikit-learn
         * pandas
         * matplotlib
-        * scipy        
+        * scipy
+        * unidecode
      
 ## Data
 * day3 - 06.tsDataModel.py
@@ -39,6 +40,9 @@
 * day4 - 05.VGG16ModelEX.py
     * cat_and_dog (https://www.microsoft.com/en-us/download/details.aspx?id=54765)
         * PetImages 폴더 안 cat, dog 400장씩
+* assignment - day5_minsojeong_cnn.py
+    * hymenoptera_data (https://www.kaggle.com/ajayrana/hymenoptera-data)
+        * ants 193장, bees 204장
 
 
 ## References
