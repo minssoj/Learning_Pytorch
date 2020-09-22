@@ -48,3 +48,5 @@
 ## References
 * Weight initialization
     * https://gomguard.tistory.com/184
+* Tensorflow Tutorial
+    * https://github.com/tensorflow/docs-l10n
