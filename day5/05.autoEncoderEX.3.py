@@ -105,9 +105,9 @@ original_x = sample_data[0]
 noise_x = add_noise(original_x).to(device)
 _, recovered_x = autoencoder(noise_x)
 
-original_img = np.reshape(original_x.to(device).data.numpy(), (28, 28))
-noise_img = np.reshape(noise_x.to(device).data.numpy(), (28, 28))
-recovered_img = np.reshape(recovered_x.to(device).data.numpy(), (28, 28))
+original_img = np.reshape(original_x.to('cpu').data.numpy(), (28, 28))
+noise_img = np.reshape(noise_x.to('cpu').data.numpy(), (28, 28))
+recovered_img = np.reshape(recovered_x.to('cpu').data.numpy(), (28, 28))
 
 # subplot의 다른 방법
 f, a = plt.subplots(1, 3, figsize=(15,15))

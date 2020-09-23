@@ -13,7 +13,7 @@ device = torch.device('cuda:0' if USE_CUDA else 'cpu')
 print('학습을 진행하는 기기:',device)
 
 
-traing_epochs = 30
+traing_epochs = 32
 batch_size = 100
 learning_rate = 0.0002
 
@@ -104,7 +104,10 @@ for i in range(traing_epochs):
 out_img = torch.squeeze(hypothesis.data)
 for i in range(5):
     plt.subplot(1, 2, 1)
-    plt.imshow(torch.squeeze(x_data[i]).numpy(), cmap='gray')
+    # TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+    # plt.imshow(torch.squeeze(x_data[i]).numpy(), cmap='gray')
+    # fixed
+    plt.imshow(torch.squeeze(x_data_[i]).to('cpu').data.numpy(), cmap='gray')       # 주의 : .cpu() -> .to('cpu').data
     plt.subplot(1, 2, 2)
-    plt.imshow(out_img[i].numpy(), cmap='gray')
+    plt.imshow(out_img[i].to('cpu').data.numpy(), cmap='gray')
     plt.show()
