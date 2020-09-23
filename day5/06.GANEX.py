@@ -13,7 +13,7 @@ epochs = 50
 batch_size = 100
 
 trainset = datasets.FashionMNIST(
-    root      = '../data/MNIST_data/',
+    root      = '../data/MNIST_fasion_data/',
     train     = True,
     download  = True,
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
@@ -28,7 +28,7 @@ G = nn.Sequential(
     nn.ReLU(),
     nn.Linear(256, 784),
     nn.Tanh()
-)
+).to(device)
 
 # discriminative
 D = nn.Sequential(
@@ -38,22 +38,23 @@ D = nn.Sequential(
     nn.LeakyReLU(0.2),
     nn.Linear(256, 1),
     nn.Sigmoid()
-)
+).to(device)
 
 loss_func = nn.BCELoss()
 d_optimizer = torch.optim.Adam(D.parameters(), lr=0.0002)
 g_optimizer = torch.optim.Adam(G.parameters(), lr=0.0002)
 
 for epoch in range(epochs):
-    for i, (image, _) in enumerate(train_loader):
+    for i, (image_, _) in enumerate(train_loader):
+        image = image_.to(device)
         image = image.reshape(batch_size, -1)
-        real_label = torch.ones(batch_size, 1)
-        fake_label = torch.zeros(batch_size, 1)
+        real_label = torch.ones(batch_size, 1).to(device)           # 주의 to(device)
+        fake_label = torch.zeros(batch_size, 1).to(device)          # 주의 to(device)
         
         # Discriminative loss 계산
         outputs = D(image)
         d_loss_real = loss_func(outputs, real_label)
-        z = torch.randn(batch_size, 64)
+        z = torch.randn(batch_size, 64).to(device)                  # 주의 to(device)
         fake_images = G(z)
         outputs = D(fake_images)
         d_loss_fake = loss_func(outputs, fake_label)
@@ -74,13 +75,13 @@ for epoch in range(epochs):
     print('epoch:{:02d}/{:02d} d_loss:{:.4f}  g_loss:{:.4f}'.format(epoch+1, epochs, d_loss.item(), g_loss.item()))
 
 # 학습 결과 test
-z = torch.randn(batch_size, 64)
+z = torch.randn(batch_size, 64).to(device)                          # 주의 to(device)
 fake_images = G(z)
 
 # 결과 출력
 import numpy as np
 import matplotlib.pyplot as plt
 for i in range(10):
-    fake_images_img = np.reshape(fake_images.data.numpy()[i], (28, 28))
+    fake_images_img = np.reshape(fake_images.to('cpu').data.numpy()[i], (28, 28))
     plt.imshow(fake_images_img, cmap='gray')
     plt.show()
